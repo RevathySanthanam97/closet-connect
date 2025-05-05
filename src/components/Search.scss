@@ -1,0 +1,46 @@
+@use "../responsive" as *;
+
+.search__input {
+  position: relative;
+
+  input {
+    background-color: var(--input-background-color);
+    color: var(--input-text-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 1.5;
+    transition: all 0.3s ease;
+    width: 100%;
+    padding: 10px 32px 10px 12px;
+    height: 56px;
+
+    @media screen and (min-width: $sm) {
+      padding-right: 60px;
+      font-size: 16px;
+    }
+  
+    &:focus {
+      outline: none;
+      border-color: var(--input-border-focus);
+      box-shadow: 0 0 0 2px rgba(102,240,255,0.5);
+    }
+    &::placeholder {
+      color: var(--secondary-text-color);
+    }
+  }
+
+  img {
+    position: absolute;
+    right: 12px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 100%;
+    width: 18px;
+
+    @media screen and (min-width: $sm) {
+      width: 24px;
+    }
+  }
+}

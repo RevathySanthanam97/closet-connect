@@ -1,0 +1,36 @@
+@use "./responsive" as *;
+
+header, footer {
+  padding: 16px 24px;
+}
+
+header {
+  border-bottom: 1px solid var(--border-color);
+  padding: 40px;
+}
+
+main {
+  .products__container {
+    background-color: var(--secondary-background-color);
+  }
+
+  .filters__wrapper {
+    padding: 20px 16px;
+    @media screen and (min-width: $md) {
+      padding: 20px 48px;
+    }
+  }
+
+  .products__wrapper, .search__container {
+    padding: 20px 24px;
+    @media screen and (min-width: $md) {
+      padding: 20px 80px;
+    }
+  }
+
+  .search__container {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background: var(--page-background-color);
+  }
+}

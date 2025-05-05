@@ -1,0 +1,29 @@
+@use "../responsive.scss" as *;
+
+.productslist__count {
+  text-align: right;
+  margin: 0px 0 10px;
+  font-size: 14px;
+  color: var(--secondary-text-color);
+  letter-spacing: 0;
+  font-weight: 100;
+}
+
+.productslist__items {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: space-between;
+  gap: 40px;
+  row-gap: 80px;
+
+  @media screen and (max-width: $lg) {
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 60px;
+  }
+  @media screen and (max-width: $md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media screen and (max-width: $sm) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

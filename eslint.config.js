@@ -1,28 +1,43 @@
-import js from '@eslint/js'
-import globals from 'globals'
-import reactHooks from 'eslint-plugin-react-hooks'
-import reactRefresh from 'eslint-plugin-react-refresh'
-import tseslint from 'typescript-eslint'
+import js from '@eslint/js';
+import globals from 'globals';
+import { createRequire } from 'module';
 
-export default tseslint.config(
-  { ignores: ['dist'] },
+// Use createRequire to load plugins
+const require = createRequire(import.meta.url);
+
+// Import the TypeScript parser directly
+import typescriptParser from '@typescript-eslint/parser';
+import { IndentStyle } from 'typescript';
+
+export default [
   {
-    extends: [js.configs.recommended, ...tseslint.configs.recommended],
-    files: ['**/*.{ts,tsx}'],
+    ignores: ['dist'],
+    files: ['**/*.ts', '**/*.tsx'],
     languageOptions: {
-      ecmaVersion: 2020,
+      // Use the actual imported parser object here
+      parser: typescriptParser,
+      parserOptions: {
+        ecmaVersion: 2020,
+        sourceType: 'module',
+      },
       globals: globals.browser,
     },
     plugins: {
-      'react-hooks': reactHooks,
-      'react-refresh': reactRefresh,
+      'react': require('eslint-plugin-react'),
+      'react-hooks': require('eslint-plugin-react-hooks'),
+      'react-refresh': require('eslint-plugin-react-refresh'),
     },
     rules: {
-      ...reactHooks.configs.recommended.rules,
+      'max-len': ['error', { code: 100 }],
+      'no-console': 'warn',
+      'react-hooks/rules-of-hooks': 'error',
       'react-refresh/only-export-components': [
         'warn',
         { allowConstantExport: true },
       ],
+      'react/jsx-uses-react': 'off',
+      'react/jsx-uses-vars': 'warn',
+      'indent': ['error', 2],
     },
   },
-)
+];
