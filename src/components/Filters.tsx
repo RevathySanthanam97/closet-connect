@@ -6,6 +6,7 @@ import Sidebar from './Sidebar';
 import MultiRangeSlider from './MultiSlider';
 
 const Filters = ({
+  range,
   minVal,
   maxVal,
   filterOptions,
@@ -47,6 +48,8 @@ const Filters = ({
           <li className='filter__price-range'>
             <label>Max Price: </label>
             <MultiRangeSlider
+              selectedMin={range.min}
+              selectedMax={range.max}
               min={minVal}
               max={maxVal}
               onChange={handleRangeChange}
@@ -78,6 +81,8 @@ const Filters = ({
         <li className='filter__price-range'>
           <label>Max Price: </label>
           <MultiRangeSlider
+            selectedMin={range.min}
+            selectedMax={range.max}
             min={minVal}
             max={maxVal}
             onChange={handleRangeChange}

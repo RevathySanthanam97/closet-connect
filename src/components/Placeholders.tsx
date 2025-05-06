@@ -1,13 +1,10 @@
-import React from 'react'
+import Loader from '../assets/loader.svg'
+import "./Placeholder.scss"
 
 const ProductPlaceholders = () => {
   return (
     <div className='product__placeholders'>
-      {Array(5).fill(null).map((_, index) => (
-        <div key={index}>
-          Hey
-        </div>
-      ))}
+      <img src={Loader} />
     </div>
   )
 }

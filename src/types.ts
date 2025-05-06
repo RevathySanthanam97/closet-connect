@@ -15,6 +15,7 @@ export interface ProductType {
 
 export interface ProductsListType {
   products: ProductType[];
+  total: number;
 }
 
 export interface SearchProps {
@@ -30,6 +31,7 @@ export interface FilterProps {
     value: PricingOption;
     checked: boolean;
   }[];
+  range: { min: number; max: number };
   handleReset: () => void,
   handleRangeChange: (values: { min: number; max: number }) => void;
   handleToggle: (option: number) => void;
@@ -46,5 +48,13 @@ export interface SidebarProps {
 export interface MultiSliderProps {
   min: number;
   max: number;
+  selectedMin: number;
+  selectedMax: number;
   onChange: (values: { min: number; max: number }) => void;
 }
+
+export interface ScrollAnimationProps {
+  children: React.ReactNode;
+  threshold?: number;
+  direction?: "up" | "down" | "left" | "right";
+};
