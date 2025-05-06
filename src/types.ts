@@ -45,7 +45,7 @@ export interface SidebarProps {
   title: string;
 }
 
-export interface MultiSliderProps {
+export interface MultiRangeProps {
   min: number;
   max: number;
   selectedMin: number;

@@ -3,7 +3,7 @@ import './Filters.scss'
 import FilterIcon from '../assets/filter.svg'
 import { useState } from 'react';
 import Sidebar from './Sidebar';
-import MultiRangeSlider from './MultiSlider';
+import MultiRangeSlider from './RangeSlider';
 
 const Filters = ({
   range,

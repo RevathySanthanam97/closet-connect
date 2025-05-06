@@ -1,7 +1,7 @@
-import "./MultiSlider.scss";
-import { MultiSliderProps } from "../types";
+import "./RangeSlider.scss";
+import { MultiRangeProps } from "../types";
 
-const MultiRangeSlider = ({ min, max, onChange, selectedMin, selectedMax }: MultiSliderProps) => {
+const MultiRangeSlider = ({ min, max, onChange, selectedMin, selectedMax }: MultiRangeProps) => {
 
   const getPercent = (value: number) => {
     if (typeof value !== "number" || isNaN(value)) return 0;
@@ -14,7 +14,7 @@ const MultiRangeSlider = ({ min, max, onChange, selectedMin, selectedMax }: Mult
   const rangeWidth = `${maxPercent - minPercent}%`;
 
   return (
-    <div className="multislider__container">
+    <div className="multirange__container">
       <input
         type="range"
         min={min}
