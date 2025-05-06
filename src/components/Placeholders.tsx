@@ -1,4 +1,4 @@
-import Loader from '../assets/loader.svg'
+import Loader from '../assets/Loader.svg'
 import "./Placeholder.scss"
 
 const ProductPlaceholders = () => {
