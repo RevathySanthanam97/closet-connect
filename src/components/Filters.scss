@@ -13,6 +13,12 @@
       display: none;
     }
   }
+  .filter__options__desktop {
+    display: none;
+    @media screen and (min-width: $sm) {
+      display: flex;
+    }
+  }
   ul {
     display: flex;
     gap: 16px;

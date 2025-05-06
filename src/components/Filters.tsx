@@ -64,7 +64,7 @@ const Filters = ({
           </li>
         </ul>
       </Sidebar>
-      <ul>
+      <ul className='filter__options__desktop'>
         <li>
           <p>Pricing Options: </p>
         </li>
